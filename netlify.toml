@@ -1,19 +1,9 @@
 [build]
   command = "npm install --legacy-peer-deps && npm run build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NODE_VERSION = "18"
-
-# Redirect all requests to Next.js
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-  force = false
+  NEXT_USE_NETLIFY_EDGE = "false"
 
 # Security headers
 [[headers]]
